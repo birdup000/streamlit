@@ -10,7 +10,12 @@ def agixt_docs():
     if HIDE_DOCS:
         return
     st.markdown(
-        "[![GitHub](https://img.shields.io/badge/GitHub-Sponsor%20Josh%20XT-blue?logo=github&style=plastic)](https://github.com/sponsors/Josh-XT) [![PayPal](https://img.shields.io/badge/PayPal-Sponsor%20Josh%20XT-blue.svg?logo=paypal&style=plastic)](https://paypal.me/joshxt) [![Ko-Fi](https://img.shields.io/badge/Kofi-Sponsor%20Josh%20XT-blue.svg?logo=kofi&style=plastic)](https://ko-fi.com/joshxt)"
+        "<div style='text-align: center;'>"
+        "[![GitHub](https://img.shields.io/badge/GitHub-Sponsor%20Josh%20XT-blue?logo=github&style=plastic)](https://github.com/sponsors/Josh-XT) "
+        "[![PayPal](https://img.shields.io/badge/PayPal-Sponsor%20Josh%20XT-blue.svg?logo=paypal&style=plastic)](https://paypal.me/joshxt) "
+        "[![Ko-Fi](https://img.shields.io/badge/Kofi-Sponsor%20Josh%20XT-blue.svg?logo=kofi&style=plastic)](https://ko-fi.com/joshxt)"
+        "</div>",
+        unsafe_allow_html=True
     )
 
     st.markdown(
@@ -22,16 +27,19 @@ def predefined_injection_variables():
     if HIDE_DOCS:
         return
     st.markdown(
-        """
-### Predefined Injection Variables
-- `{agent_name}` will cause the agent name to be injected.
-- `{context}` will cause the current context from memory to be injected. This will only work if you have `{user_input}` in your prompt arguments for the memory search.
-- `{date}` will cause the current date and timestamp to be injected.
-- `{conversation_history}` will cause the conversation history to be injected.
-- `{COMMANDS}` will cause the available commands list to be injected and for automatic commands execution from the agent based on its suggestions.
-- `{command_list}` will cause the available commands list to be injected, but will not execute any commands the AI chooses. Useful on validation steps.
-- `{STEPx}` will cause the step `x` response from a chain to be injected. For example, `{STEP1}` will inject the first step's response in a chain.
-    """
+        "<div style='text-align: left;'>"
+        "<h3>Predefined Injection Variables</h3>"
+        "<ul>"
+        "<li><code>{agent_name}</code> will cause the agent name to be injected.</li>"
+        "<li><code>{context}</code> will cause the current context from memory to be injected. This will only work if you have <code>{user_input}</code> in your prompt arguments for the memory search.</li>"
+        "<li><code>{date}</code> will cause the current date and timestamp to be injected.</li>"
+        "<li><code>{conversation_history}</code> will cause the conversation history to be injected.</li>"
+        "<li><code>{COMMANDS}</code> will cause the available commands list to be injected and for automatic commands execution from the agent based on its suggestions.</li>"
+        "<li><code>{command_list}</code> will cause the available commands list to be injected, but will not execute any commands the AI chooses. Useful on validation steps.</li>"
+        "<li><code>{STEPx}</code> will cause the step <code>x</code> response from a chain to be injected. For example, <code>{STEP1}</code> will inject the first step's response in a chain.</li>"
+        "</ul>"
+        "</div>",
+        unsafe_allow_html=True
     )
 
 

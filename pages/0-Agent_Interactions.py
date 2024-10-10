@@ -3,11 +3,28 @@ import os
 from components.selectors import AGiXTSelectors
 from components.docs import agixt_docs, predefined_injection_variables
 from ApiClient import get_agixt
+from Globals import getenv
 
 st.set_page_config(
     page_title="Agent Interactions",
     page_icon=":speech_balloon:",
     layout="wide",
+    theme={
+        "primaryColor": getenv("PRIMARY_COLOR"),
+        "backgroundColor": getenv("BACKGROUND_COLOR"),
+        "secondaryBackgroundColor": getenv("SECONDARY_BACKGROUND_COLOR"),
+        "textColor": getenv("TEXT_COLOR"),
+        "font": getenv("FONT")
+    }
+)
+st.markdown(
+    f"<style>"
+    f"body {{ font-family: {getenv('FONT')}; }}"
+    f".stApp {{ background-color: {getenv('BACKGROUND_COLOR')}; }}"
+    f".stSidebar {{ background-color: {getenv('SECONDARY_BACKGROUND_COLOR')}; }}"
+    f".stButton>button {{ background-color: {getenv('PRIMARY_COLOR')}; color: {getenv('TEXT_COLOR')}; }}"
+    f"</style>",
+    unsafe_allow_html=True
 )
 ApiClient = get_agixt()
 if not ApiClient:
