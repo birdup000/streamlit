@@ -31,6 +31,15 @@ class AGiXTSelectors:
             "textColor": getenv("TEXT_COLOR"),
             "font": getenv("FONT")
         }
+        st.markdown(
+            f"<style>"
+            f"body {{ font-family: {self.theme['font']}; }}"
+            f".stApp {{ background-color: {self.theme['backgroundColor']}; }}"
+            f".stSidebar {{ background-color: {self.theme['secondaryBackgroundColor']}; }}"
+            f".stButton>button {{ background-color: {self.theme['primaryColor']}; color: {self.theme['textColor']}; }}"
+            f"</style>",
+            unsafe_allow_html=True
+        )
 
     def cached_get_extensions(self):
         return self.sdk.get_extensions()

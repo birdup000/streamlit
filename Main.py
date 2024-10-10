@@ -15,11 +15,11 @@ st.set_page_config(
     layout="wide",
     initial_sidebar_state="expanded",
     theme={
-        "primaryColor": "#4CAF50",
-        "backgroundColor": "#F0F0F0",
-        "secondaryBackgroundColor": "#E0E0E0",
-        "textColor": "#333333",
-        "font": "sans-serif"
+        "primaryColor": "#1E90FF",
+        "backgroundColor": "#FFFFFF",
+        "secondaryBackgroundColor": "#F8F8F8",
+        "textColor": "#000000",
+        "font": "Arial"
     }
 )
 ApiClient = get_agixt()

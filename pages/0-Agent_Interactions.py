@@ -17,6 +17,15 @@ st.set_page_config(
         "font": getenv("FONT")
     }
 )
+st.markdown(
+    f"<style>"
+    f"body {{ font-family: {getenv('FONT')}; }}"
+    f".stApp {{ background-color: {getenv('BACKGROUND_COLOR')}; }}"
+    f".stSidebar {{ background-color: {getenv('SECONDARY_BACKGROUND_COLOR')}; }}"
+    f".stButton>button {{ background-color: {getenv('PRIMARY_COLOR')}; color: {getenv('TEXT_COLOR')}; }}"
+    f"</style>",
+    unsafe_allow_html=True
+)
 ApiClient = get_agixt()
 if not ApiClient:
     st.stop()
